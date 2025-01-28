@@ -1,11 +1,21 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
-import { Box, Divider, Flex, Group, LoadingOverlay, Pagination, Text, TextInput, Button } from '@mantine/core';
+import {
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Group,
+  LoadingOverlay,
+  Pagination,
+  Text,
+  TextInput,
+} from '@mantine/core';
 import { getPokemonList } from '@/route-handlers/pokemon';
 import { PokemonListItem } from './PokemonListItem';
-import Link from 'next/link';
 
 const PAGE_SIZE = 10;
 

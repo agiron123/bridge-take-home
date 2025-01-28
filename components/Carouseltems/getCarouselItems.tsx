@@ -1,6 +1,6 @@
 import React from 'react';
-import { Image } from '@mantine/core';
 import { Carousel } from '@mantine/carousel';
+import { Image } from '@mantine/core';
 
 type Sprites = {
   back_default?: string;
@@ -34,7 +34,13 @@ function getCarouselItems(sprites: Sprites, name: string): React.ReactNode[] {
   return spriteUrls.map((sprite) => (
     <Carousel.Slide
       key={sprite}
-      style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '200px', width: '200px' }}
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '200px',
+        width: '200px',
+      }}
     >
       <Image w="100%" h="100%" src={sprite} alt={name} />
     </Carousel.Slide>
