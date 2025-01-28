@@ -13,9 +13,7 @@ type Sprites = {
   back_female?: string;
 };
 
-function getCarouselItems(sprites: Sprites, name: string): React.ReactNode[] {
-  console.log('getCarouselItems sprites', sprites);
-
+export function getCarouselItems(sprites: Sprites, name: string): React.ReactNode[] {
   if (!sprites) {
     return [];
   }
