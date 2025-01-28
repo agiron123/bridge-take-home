@@ -1,3 +1,29 @@
+Note to Reviewer: 
+
+When reviewing the code in this repository, it is recommended that you review the following stack of PRs:
+
+1. List View Implementation:
+https://github.com/agiron123/bridge-take-home/pull/2
+
+2. Detail View Implenmentation:
+https://github.com/agiron123/bridge-take-home/pull/3
+
+3. Searching Functionality.
+https://github.com/agiron123/bridge-take-home/pull/1
+
+Each PR above builds upon the one before and should be easy to follow along.
+
+I tried to go for a balasnce of speed and getting some nicer UI styling.
+I also decided to use Next, which isn't my usual React framework. I had a couple hiccups initially getting used to things, but
+found that the docs were quite smooth. 
+
+If you've got any more questions, you can reach me here:
+agiron123@gmail.com
+
+
+--------------
+
+
 # Mantine Next.js template
 
 This is a template for [Next.js](https://nextjs.org/) app router + [Mantine](https://mantine.dev/).
