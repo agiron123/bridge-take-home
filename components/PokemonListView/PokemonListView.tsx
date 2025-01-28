@@ -60,12 +60,14 @@ export const PokemonListView = () => {
     enabled: searchQuery.length > 0 && searchField === 'type',
   });
 
-  if (isError) {
-    console.error(error);
-    return <div>Error fetching pokemon list: {error.message}</div>;
-  } else if (isSearchError) {
-    console.error(searchError);
-    return <div>Error fetching pokemon list: {searchError.message}</div>;
+  if (isError || isSearchError || isSearchErrorByType) {
+    console.error(error || searchError || searchErrorByType);
+    return (
+      <div>
+        Error fetching pokemon list:{' '}
+        {error?.message || searchError?.message || searchErrorByType?.message}
+      </div>
+    );
   }
 
   const handleSearch = () => {
@@ -101,7 +103,7 @@ export const PokemonListView = () => {
 
   return (
     <Box m="128px">
-      <LoadingOverlay visible={isPending} />
+      <LoadingOverlay visible={isPending || isSearching || isSearchingByType} />
       <NativeSelect
         name="search-field"
         label="Search by:"
@@ -145,14 +147,14 @@ export const PokemonListView = () => {
         {filteredPokemon?.results.map((pokemon: { name: string; url: string }, index: number) => {
           let itemIndex = (page - 1) * PAGE_SIZE + index + 1;
           const splitUrl = pokemon.url.split('/');
-          itemIndex = parseInt(splitUrl[splitUrl.length - 2]);
+          itemIndex = parseInt(splitUrl[splitUrl.length - 2], 10);
 
           return (
             <Link
               key={pokemon.name}
-              href={'/pokemon/' + itemIndex}
+              href={`/pokemon/${itemIndex}`}
               style={{ color: 'black', cursor: 'pointer' }}
-              prefetch={true}
+              prefetch
             >
               <PokemonListItem id={itemIndex} name={pokemon.name} />
               <Divider my="sm" />
