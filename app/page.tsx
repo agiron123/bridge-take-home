@@ -1,11 +1,10 @@
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
-import { Welcome } from '../components/Welcome/Welcome';
+import { Container } from '@mantine/core';
+import { PokemonListView } from '@/components/PokemonListView/PokemonListView';
 
 export default function HomePage() {
   return (
-    <>
-      <Welcome />
-      <ColorSchemeToggle />
-    </>
+    <Container>
+      <PokemonListView />
+    </Container>
   );
 }

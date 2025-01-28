@@ -1,19 +1,17 @@
+'use client';
+
 import '@mantine/core/styles.css';
 
 import React from 'react';
-import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
-import { theme } from '../theme';
-
-export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
-};
+import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
+import Providers from './providers';
 
 export default function RootLayout({ children }: { children: any }) {
   return (
     <html lang="en" {...mantineHtmlProps}>
       <head>
         <ColorSchemeScript />
+        {/* TODO: Add pokeball favicon */}
         <link rel="shortcut icon" href="/favicon.svg" />
         <meta
           name="viewport"
@@ -21,7 +19,7 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
