@@ -1,6 +1,7 @@
 'use client';
 
 import '@mantine/core/styles.css';
+import '@mantine/carousel/styles.css';
 
 import React from 'react';
 import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';

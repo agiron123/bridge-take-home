@@ -15,3 +15,16 @@ export async function getPokemonList(page: number, pageSize: number) {
     throw error;
   }
 }
+
+export async function getPokemonDetails(id: string) {
+  try {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    if (!res.ok) {
+      throw new Error('Failed to fetch pokemon details');
+    }
+    return res.json();
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
